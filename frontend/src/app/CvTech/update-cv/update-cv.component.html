@@ -1,0 +1,25 @@
+<!-- <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div> -->
+<form #form="ngForm">
+    <label for="name">Name</label>
+    <input required id="name" type="text" [(ngModel)]="personne.NAME" name="name" class="form-control">
+
+    <label for="lastname">Lastname</label>
+    <input required id="lastname" type="text" [(ngModel)]="personne.LASTNAME" name="lastname" class="form-control">
+
+    <label for="job">Job</label>
+    <input required id="job" type="text" [(ngModel)]="personne.JOB" name="job" class="form-control">
+
+    <label for="age">Age</label>
+    <input required min="0" id="age" type="number" [(ngModel)]="personne.AGE" name="age" class="form-control">
+
+    <label for="cin">CIN</label>
+    <input required id="cin" type="number" [(ngModel)]="personne.CIN" name="cin" class="form-control">
+
+    <label for="path">Path</label>
+    <input id="path" type="text" [(ngModel)]="personne.PATH" name="path" class="form-control">
+
+    <button [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">
+        update
+    </button>
+</form>
+

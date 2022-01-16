@@ -1,0 +1,15 @@
+<ol class="list-group">
+
+    <app-item *ngFor="let element of personne" (selectedPerson)="selectPerson($event)" [personne]="element"></app-item>
+</ol>
+
+
+<!-- <ol *ngFor="let personne of personne" >
+    <li> {{personne.id}}</li><br/>
+    <li> {{personne.NAME}}</li><br />
+    <li> {{personne.LASTNAME}}</li><br />
+    <li> {{personne.AGE}}</li><br />
+    <li> {{personne.CIN}}</li><br />
+    <li> {{personne.PATH}}</li><br />
+    <li> {{personne.JOB}}</li><br />
+</ol> -->

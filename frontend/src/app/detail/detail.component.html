@@ -1,0 +1,74 @@
+<div>
+<!-- show delete message -->
+<div *ngIf="successMsg" class="alert alert-info" role="alert">
+<strong>{{successMsg}}</strong>
+</div>
+
+<div class="d-flex justify-content-center" *ngFor="let element of personne">
+    <div class="col-lg-8 push-lg-4">
+        <div class="tab-content p-b-3">
+            <div class="tab-pane active" id="profile">
+                <h4 class="m-y-2">cv {{element.LASTNAME}} {{element.NAME}}</h4>
+                <div class="d-flex justify-content-center">   
+                    <img class="img-circle" src="../../assets/images/{{element.PATH}}" width="150px" height="150px"
+                        class="rounded-circle align-center">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="m-t-2"> </h4>
+                        <span></span>
+                        <table class="table table-hover table-stripted">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong> Name </strong>{{element.NAME}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong> Last Name</strong> {{element.LASTNAME}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong> Age</strong> {{element.AGE}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong> Job</strong> {{element.JOB}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong> CIN</strong> {{element.CIN}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-danger" (click)="deletePersonnebyId(element.id)">Remove</button> 
+                            &nbsp;
+                            <button [routerLink]="['updateCv/:id']" class="btn btn-success" (click)="updatePersonne(element.id)"> Update </button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- <div>
+    <tr *ngFor="let element of personne" >
+        <th scope="row">
+{{element.NAME}}{{element.LASTNAME}}
+        </th>
+        <td>Name:{{element.NAME}}</td>
+        <td>Lastname:{{element.LASTNAME}}</td>
+        <td></td>
+        <td></td>
+        <td> <button class="btn btn-danger" (click)="deletePersonnebyId(element.id)">remove</button>
+</td>
+    </tr>
+</div> -->
